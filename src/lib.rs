@@ -1,5 +1,7 @@
 #![cfg_attr(feature = "clippy", feature(plugin))]
 #![cfg_attr(feature = "clippy", plugin(clippy))]
+#![deny(missing_debug_implementations)]
+// #![warn(missing_docs)]
 #[macro_use]
 extern crate error_chain;
 
@@ -8,23 +10,13 @@ extern crate log;
 extern crate reqwest;
 extern crate ring;
 extern crate serde;
+#[macro_use]
+extern crate serde_derive;
 extern crate serde_json;
 
 extern crate tungstenite;
 extern crate url;
 
-#[macro_use]
-extern crate serde_derive;
-
-mod util;
-mod client;
-mod errors;
-
+pub mod errors;
 pub mod model;
-
 pub mod api;
-pub mod general;
-pub mod account;
-pub mod market;
-pub mod userstream;
-pub mod websockets;

@@ -6,3 +6,9 @@ Cargo.lock
 *.fmt
 .idea*.*
 .idea/*
+
+# Config for testing
+config.toml
+
+# Sample directory of large json files
+samples/

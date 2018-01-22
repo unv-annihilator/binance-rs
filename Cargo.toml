@@ -1,8 +1,9 @@
 [package]
 name = "binance"
-version = "0.1.4"
+version = "0.2.0"
 license = "MIT OR Apache-2.0"
-authors = ["Flavio Oliveira <flavio@wisespace.io>"]
+authors = ["Flavio Oliveira <flavio@wisespace.io>", 
+           "Sean Schwartz <unv-annihilator@users.noreply.github.com>"]
 
 description = "Rust Library for the Binance API"
 keywords = ["cryptocurrency", "trading"]
@@ -17,7 +18,7 @@ name = "binance"
 path = "src/lib.rs"
 
 [dependencies]
-clippy = { version = "0.0.180", optional = true }
+clippy = { version = "0.0.179", optional = true }
 log = "0.4.1"
 hex = "0.3.1"
 serde = "^1.0"
@@ -28,3 +29,10 @@ ring = "0.12.1"
 reqwest = "0.8.0"
 tungstenite = "0.5.3"
 url = "1.6.0"
+
+[patch.crates-io]
+input_buffer = { path = "../input_buffer" }
+tungstenite = { path = "../tungstenite-rs" }
+
+[dev-dependencies]
+config = "0.7.0"

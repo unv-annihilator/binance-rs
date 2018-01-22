@@ -1,5 +1,6 @@
-use std;
 use reqwest;
+use serde_json;
+use std;
 use url;
 
 error_chain! {
@@ -7,13 +8,14 @@ error_chain! {
         Error, ErrorKind, ResultExt, Result;
     }
 
-    errors { FooError }
+    errors {
+        ParseIntervalError
+    }
 
     foreign_links {
         ReqError(reqwest::Error);
         IoError(std::io::Error);
-        ParseFloatError(std::num::ParseFloatError);
         UrlParserError(url::ParseError);
+        SerdeJsonError(serde_json::Error);
     }
-
 }
